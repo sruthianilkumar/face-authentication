@@ -11,6 +11,8 @@ Offline-first facial authentication system with liveness detection for Android a
 - Fast authentication
 - Local storage with cloud sync
 
+## Architecture
+
 ## Tech Stack
 - Python
 - TensorFlow Lite
@@ -21,3 +23,8 @@ Offline-first facial authentication system with liveness detection for Android a
 
 ## Status
 Hackathon Project – In Development
+
+# Workflow
+# Folder Structure
+# Installation
+# Future Improvements
