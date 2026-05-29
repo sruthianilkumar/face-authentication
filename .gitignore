@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# React Native
+node_modules/
+android/.gradle/
+android/app/build/
+ios/build/
+
+# Environment
+.env
+
+# Mac/Linux
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
