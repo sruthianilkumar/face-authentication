@@ -6,7 +6,13 @@ import pickle
 ENCODINGS_FILE = "models/encodings.pkl"
 
 mp_face_mesh = mp.solutions.face_mesh
-face_mesh = mp_face_mesh.FaceMesh(static_image_mode=True)
+face_mesh = mp_face_mesh.FaceMesh(
+    static_image_mode=False,
+    max_num_faces=1,
+    refine_landmarks=False,
+    min_detection_confidence=0.5,
+    min_tracking_confidence=0.5
+)
 
 def extract_features(image):
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -15,12 +21,12 @@ def extract_features(image):
     if not results.multi_face_landmarks:
         return None
 
-    landmarks = results.multi_face_landmarks[0].landmark
+    lm = results.multi_face_landmarks[0].landmark
 
     vector = []
-    for lm in landmarks:
-        vector.append(lm.x)
-        vector.append(lm.y)
+    for i in range(0, len(lm), 2):  # reduce noise + speed up
+        vector.append(lm[i].x)
+        vector.append(lm[i].y)
 
     return np.array(vector)
 
@@ -29,31 +35,56 @@ def load_data():
         return pickle.load(f)
 
 def match(face_vec, encodings, labels):
-    best_label = "Unknown"
-    min_dist = float("inf")
+    best = "Unknown"
+    min_dist = 999
 
     for enc, label in zip(encodings, labels):
         dist = np.linalg.norm(face_vec - enc)
 
         if dist < min_dist:
             min_dist = dist
-            best_label = label
+            best = label
 
-    if min_dist < 2.0:
-        return best_label
-    return "Unknown"
+    if min_dist < 2.2:
+        return best, min_dist
+    return "Unknown", min_dist
 
 
-if __name__ == "__main__":
+def run():
     data = load_data()
 
-    test_img = "data/s/0.jpg"   # change if needed
-    image = cv2.imread(test_img)
+    cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
 
-    features = extract_features(image)
+    print("LIVE FACE AUTH STARTED - Press Q to quit")
 
-    if features is None:
-        print("No face detected")
-    else:
-        result = match(features, data["encodings"], data["labels"])
-        print("Result:", result)
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            continue
+
+        features = extract_features(frame)
+
+        label = "No Face"
+        dist = ""
+
+        if features is not None:
+            label, dist_val = match(features, data["encodings"], data["labels"])
+            dist = f"{dist_val:.2f}"
+
+        cv2.putText(frame, f"USER: {label}", (30, 50),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+
+        if dist:
+            cv2.putText(frame, f"DIST: {dist}", (30, 90),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,0), 2)
+
+        cv2.imshow("Face Authentication", frame)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    run()
