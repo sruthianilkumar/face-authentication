@@ -1,68 +1,59 @@
 import cv2
-#import face_recognition
-import pickle
+import mediapipe as mp
 import numpy as np
+import pickle
 
-ENCODINGS_FILE = "../models/encodings.pkl"
+ENCODINGS_FILE = "models/encodings.pkl"
 
+mp_face_mesh = mp.solutions.face_mesh
+face_mesh = mp_face_mesh.FaceMesh(static_image_mode=True)
 
-def load_encodings():
+def extract_features(image):
+    rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    results = face_mesh.process(rgb)
+
+    if not results.multi_face_landmarks:
+        return None
+
+    landmarks = results.multi_face_landmarks[0].landmark
+
+    vector = []
+    for lm in landmarks:
+        vector.append(lm.x)
+        vector.append(lm.y)
+
+    return np.array(vector)
+
+def load_data():
     with open(ENCODINGS_FILE, "rb") as f:
-        data = pickle.load(f)
-    return data
+        return pickle.load(f)
 
+def match(face_vec, encodings, labels):
+    best_label = "Unknown"
+    min_dist = float("inf")
 
-def authenticate():
-    data = load_encodings()
+    for enc, label in zip(encodings, labels):
+        dist = np.linalg.norm(face_vec - enc)
 
-    video = cv2.VideoCapture(0)
+        if dist < min_dist:
+            min_dist = dist
+            best_label = label
 
-    print("Starting authentication... Press Q to quit")
-
-    while True:
-        ret, frame = video.read()
-        if not ret:
-            break
-
-        rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-        boxes = face_recognition.face_locations(rgb)
-        encodings = face_recognition.face_encodings(rgb, boxes)
-
-        names = []
-
-        for enc in encodings:
-            matches = face_recognition.compare_faces(
-                data["encodings"], enc
-            )
-
-            name = "Unknown"
-
-            face_distances = face_recognition.face_distance(
-                data["encodings"], enc
-            )
-
-            best_match = np.argmin(face_distances)
-
-            if matches[best_match]:
-                name = data["names"][best_match]
-
-            names.append(name)
-
-        # Display results
-        for (top, right, bottom, left), name in zip(boxes, names):
-            cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
-            cv2.putText(frame, name, (left, top - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
-
-        cv2.imshow("Authentication", frame)
-
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
-    video.release()
-    cv2.destroyAllWindows()
+    if min_dist < 2.0:
+        return best_label
+    return "Unknown"
 
 
 if __name__ == "__main__":
-    authenticate()
+    data = load_data()
+
+    test_img = "data/s/0.jpg"   # change if needed
+    image = cv2.imread(test_img)
+
+    features = extract_features(image)
+
+    if features is None:
+        print("No face detected")
+    else:
+        result = match(features, data["encodings"], data["labels"])
+        print("Result:", result)
