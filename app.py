@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import cv2
 import mediapipe as mp
 print(mp.solutions)
@@ -105,7 +105,6 @@ def capture():
     })
     
     
-=======
 import os
 import sys
 
@@ -117,19 +116,19 @@ def menu():
     print("2. Encode Faces")
     print("3. Authenticate")
     print("4. Exit")
-    print("==============================")
+    print("=============================")
 
 def run_capture():
-    print("\n📸 Starting Face Capture...\n")
-    os.system("python src/capture_faces.py")
+    print("\n Starting Face Capture...\n")
+    os.system("python3 src/capture_faces.py")
 
 def run_encode():
-    print("\n🧠 Encoding Faces...\n")
-    os.system("python src/encode_faces.py")
+    print("\n Encoding Faces...\n")
+    os.system("python3 src/encode_faces.py")
 
 def run_auth():
-    print("\n🔍 Starting Authentication...\n")
-    os.system("python src/authenticate.py")
+    print("\n Starting Authentication...\n")
+    os.system("python3 src/authenticate.py")
 
 if __name__ == "__main__":
     while True:
@@ -146,9 +145,9 @@ if __name__ == "__main__":
             run_auth()
 
         elif choice == "4":
-            print("Exiting system... 👋")
+            print("Exiting system...")
             sys.exit()
 
         else:
-            print("❌ Invalid choice! Try again.")
->>>>>>> c9ed0383e2a4bed44b28156d6f724eea50c87f60
+            print(" Invalid choice! Try again.")
+
