@@ -1,7 +1,7 @@
 
 import cv2
 import mediapipe as mp
-print(mp.solutions)
+#print(mp.solutions)
 from flask import Flask, jsonify
 
 
@@ -89,12 +89,12 @@ class FaceService:
                 
 app = Flask(__name__)
 
-face_service = FaceService()   # ✅ create object
+face_service = FaceService() 
 
 
 @app.route("/capture")
 def capture():
-    face = face_service.capture_face()   # ✅ correct call
+    face = face_service.capture_face()   
 
     if face is None:
         return jsonify({"status": "failed"})
