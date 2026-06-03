@@ -8,6 +8,12 @@ The system captures a face image from a mobile device, sends it to a backend API
 
 ---
 
+## Project Goal
+
+The objective of this project is to provide a lightweight, privacy-preserving face authentication solution that can operate without continuous internet connectivity. The system is designed as a proof-of-concept for secure identity verification in offline or low-connectivity environments.
+
+---
+
 ## Features
 
 * Mobile face capture using React Native (Expo)
@@ -159,9 +165,10 @@ Scan the QR code using Expo Go to run the application on a mobile device.
 ## Current Limitations
 
 * Basic feature extraction approach
-* Camera integration is under active development
+* Mobile camera integration requires additional device-specific testing
 * Authentication accuracy depends on image quality
 * Limited face dataset for testing
+* Prototype implementation intended for demonstration purposes
 
 ---
 
