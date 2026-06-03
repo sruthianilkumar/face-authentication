@@ -20,9 +20,9 @@ Most face authentication systems today depend on cloud services, which cause:
 
 ---
 
-## 💡 Our Solution
+## 💡 Solution
 
-We built a **fully offline-first biometric authentication system** that:
+I built a **fully offline-first biometric authentication system** that:
 
 ✔ Works without internet  
 ✔ Keeps all biometric data local  
