@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/banner.png" alt="Face Authentication System Banner" />
+  <img src="assets/banner1.png" alt="Face Authentication System Banner" />
 </p>
 
 ---
