@@ -17,6 +17,11 @@
 ![Status](https://img.shields.io/badge/Status-Hackathon%20Project-purple)
 
 </p>
+
+<p align="center">
+  <img src="assets/banner.png" alt="Face Authentication System Banner" />
+</p>
+
 ---
 
 ## 🚀 One-Line Pitch
