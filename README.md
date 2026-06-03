@@ -22,7 +22,7 @@
   <img src="assets/banner1.png" alt="Face Authentication System Banner" />
 </p>
 
----
+
 
 ## 🚀 One-Line Pitch
 
@@ -65,6 +65,12 @@ I built a **fully offline-first biometric authentication system** that:
 
 ## 🏗 System Architecture
 
+
+<p align="center">
+  <img src="assets/architecture.png" alt="Face Authentication Architecture" />
+</p>
+
+
 ```
 Mobile App (React Native)
         ↓
@@ -79,12 +85,6 @@ Face Matching Engine
 Authentication Result
 ```
 
-## 🏗 System Architecture
-
-<p align="center">
-  <img src="assets/architecture.png" alt="Face Authentication Architecture" />
-</p>
----
 
 
 ## Face Recognition Pipeline (ML + Embeddings)
@@ -141,7 +141,6 @@ The encoding process is automatically triggered during user registration. Genera
 ### Frontend
 - React Native  
 - Expo  
-- TypeScript  
 
 ### Backend
 - Python  
