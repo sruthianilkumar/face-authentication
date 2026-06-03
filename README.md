@@ -79,10 +79,15 @@ Face Matching Engine
 Authentication Result
 ```
 
+## 🏗 System Architecture
+
+<p align="center">
+  <img src="assets/architecture.png" alt="Face Authentication Architecture" />
+</p>
 ---
 
 
-##  Face Recognition Pipeline (ML + Embeddings)
+## Face Recognition Pipeline (ML + Embeddings)
 
 The system uses a lightweight face recognition pipeline based on facial embeddings instead of raw image comparison. This improves both accuracy and performance while enabling real-time offline authentication.
 
@@ -152,28 +157,6 @@ The encoding process is automatically triggered during user registration. Genera
 
 ## 📂 Project Structure
 
-
-## 🛠 Tech Stack
-
-**Frontend**
-- React Native
-- Expo
-- TypeScript
-
-**Backend**
-- Python
-- Flask
-- OpenCV
-- MediaPipe
-- NumPy
-
-**Storage**
-- Local Pickle-based Face Encodings (.pkl)
-
----
-
-## 📂 Project Structure
-
 ```
 face-authentication/
 │
@@ -197,6 +180,16 @@ face-authentication/
 5. Features extracted and encoded  
 6. Compared with stored embeddings  
 7. Authentication result returned  
+
+---
+
+## 📌 Hackathon Compliance Mapping
+
+- ✔ Offline-first system (no cloud dependency)
+- ✔ Lightweight model design (<20MB footprint)
+- ✔ Fast inference (<1 second authentication time)
+- ✔ React Native compatible architecture
+- ✔ Open-source stack only (Python, Flask, MediaPipe)
 
 ---
 
@@ -255,6 +248,14 @@ Mobile app and system outputs are available in the `assets/` folder.
 - Improved mobile UI/UX  
 - Edge-device optimization  
 
+
+
+### 🛡️ Liveness Detection (Planned)
+
+- Blink detection using facial landmarks
+- Head movement verification
+- Smile-based challenge response
+- Prevents photo/video spoofing attacks
 ---
 
 ## 📊 Real-World Impact
