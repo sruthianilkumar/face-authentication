@@ -1,6 +1,5 @@
-opencv-python
-numpy
-
+flask
 opencv-python
 numpy
 mediapipe
+
