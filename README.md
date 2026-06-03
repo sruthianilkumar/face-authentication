@@ -1,6 +1,22 @@
 # Face Authentication System  
-### 🔐 Offline • Privacy-First • No Cloud Dependency
 
+---
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-Backend-black?logo=flask)
+![React Native](https://img.shields.io/badge/React%20Native-Mobile-61DAFB?logo=react)
+![Expo](https://img.shields.io/badge/Expo-React%20Native-000020?logo=expo)
+![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?logo=opencv)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-AI-orange)
+![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?logo=numpy)
+
+![Offline](https://img.shields.io/badge/Mode-Offline--First-success)
+![Privacy](https://img.shields.io/badge/Privacy-No%20Cloud-important)
+![Status](https://img.shields.io/badge/Status-Hackathon%20Project-purple)
+
+</p>
 ---
 
 ## 🚀 One-Line Pitch
