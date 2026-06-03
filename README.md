@@ -81,6 +81,78 @@ Authentication Result
 
 ---
 
+
+##  Face Recognition Pipeline (ML + Embeddings)
+
+The system uses a lightweight face recognition pipeline based on facial embeddings instead of raw image comparison. This improves both accuracy and performance while enabling real-time offline authentication.
+
+### 🔹 Face Encoding Generation
+During the enrollment phase, the system detects the face region from input images and converts it into a high-dimensional numerical representation (embedding).
+
+These embeddings capture:
+- Geometric facial structure  
+- Relative distances between key facial landmarks  
+- Unique texture and spatial features  
+
+The extracted embeddings are stored locally in `encodings.pkl`.
+
+---
+
+### 🔹 Stored Representation (`encodings.pkl`)
+The `encodings.pkl` file contains precomputed face embeddings for registered users.
+
+Instead of storing raw images, the system stores numerical feature vectors, ensuring:
+- Faster authentication comparison  
+- Reduced storage requirements  
+- Improved privacy (no raw biometric storage at runtime)  
+
+---
+
+### 🔹 Authentication Process
+During login:
+
+1. A live image is captured via the mobile app  
+2. The same feature extraction pipeline generates an embedding  
+3. The embedding is compared against stored encodings  
+4. A similarity threshold determines authentication success  
+
+---
+
+### 🔹 Key Advantages
+- **Offline Processing:** No cloud API dependency  
+- **Privacy-Preserving:** Only embeddings are stored, not images  
+- **Fast Inference:** Vector-based comparison enables real-time response  
+- **Scalable Design:** Supports multiple user enrollment  
+
+---
+
+### 🔹 Implementation Note
+The encoding process is automatically triggered during user registration. Generated embeddings are serialized and stored in `encodings.pkl` for later authentication use.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React Native  
+- Expo  
+- TypeScript  
+
+### Backend
+- Python  
+- Flask  
+- OpenCV  
+- MediaPipe  
+- NumPy  
+
+### Storage
+- Local Pickle-based Face Encodings (`.pkl`)
+
+---
+
+## 📂 Project Structure
+
+
 ## 🛠 Tech Stack
 
 **Frontend**
