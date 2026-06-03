@@ -89,13 +89,19 @@ def home():
 def auth():
     try:
         if "image" not in request.files:
-            return jsonify({"status": "fail", "msg": "No image uploaded"})
-
+            return jsonify({
+               "status": "fail",
+               "msg": "No image uploaded"
+             }), 400
         file = request.files["image"]
 
         img_bytes = np.frombuffer(file.read(), np.uint8)
         frame = cv2.imdecode(img_bytes, cv2.IMREAD_COLOR)
-
+        if frame is None:
+           return jsonify({
+            "status": "fail",
+            "msg": "Invalid image"
+           }), 400
         features = extract_features(frame)
 
         if features is None:

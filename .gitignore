@@ -1,22 +1,36 @@
 # Python
-__pycache__/
+
+**pycache**/
 *.pyc
 venv/
 
-# React Native
+# React Native / Expo
+
 node_modules/
+.expo/
+
+# Android
+
 android/.gradle/
 android/app/build/
+
+# iOS
+
 ios/build/
 
 # Environment
+
 .env
 
-# Mac/Linux
-.DS_Store
-
 # VS Code
+
 .vscode/
 
+# OS files
+
+.DS_Store
+
 # Logs
+
 *.log
+
