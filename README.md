@@ -1,6 +1,9 @@
 # Face Authentication System  
 
+---
+
 <p align="center">
+
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-Backend-black?logo=flask)
 ![React Native](https://img.shields.io/badge/React%20Native-Mobile-61DAFB?logo=react)
@@ -8,14 +11,18 @@
 ![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?logo=opencv)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-AI-orange)
 ![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?logo=numpy)
+
 ![Offline](https://img.shields.io/badge/Mode-Offline--First-success)
 ![Privacy](https://img.shields.io/badge/Privacy-No%20Cloud-important)
 ![Status](https://img.shields.io/badge/Status-Hackathon%20Project-purple)
+
 </p>
 
 <p align="center">
   <img src="assets/banner1.png" alt="Face Authentication System Banner" />
 </p>
+
+
 
 ## 🚀 One-Line Pitch
 
@@ -58,10 +65,11 @@ I built a **fully offline-first biometric authentication system** that:
 
 ## 🏗 System Architecture
 
+
 <p align="center">
   <img src="assets/Architecture.png" alt="Face Authentication Architecture" />
 </p>
-Flow: Mobile App → Flask API → MediaPipe → Feature Extraction → Matching Engine → Result
+
 
 ```
 Mobile App (React Native)
@@ -76,7 +84,8 @@ Face Matching Engine
         ↓
 Authentication Result
 ```
----
+
+
 
 ## Face Recognition Pipeline (ML + Embeddings)
 
@@ -199,6 +208,7 @@ Backend runs at:
 ```
 http://localhost:5000
 ```
+
 ---
 
 ### 📱 Mobile App
