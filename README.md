@@ -1,4 +1,4 @@
-# 🧠 Face Authentication System  
+# Face Authentication System  
 ### 🔐 Offline • Privacy-First • No Cloud Dependency
 
 ---
