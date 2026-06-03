@@ -23,11 +23,44 @@ export default function HomeScreen() {
   }
 
   const takePicture = async () => {
+  try {
     const photo = await cameraRef.current?.takePictureAsync();
-    setResult("Captured ✔ (next: send to backend)");
-    console.log(photo);
-  };
 
+    if (!photo) {
+      setResult("Failed to capture image");
+      return;
+    }
+
+    setResult("Authenticating...");
+
+    const formData = new FormData();
+
+    formData.append("image", {
+      uri: photo.uri,
+      name: "face.jpg",
+      type: "image/jpeg",
+    } as any);
+
+    const response = await fetch(
+      "http://192.168.65.48:5000/auth",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.status === "success") {
+      setResult(`User: ${data.user}`);
+    } else {
+      setResult(data.msg);
+    }
+  } catch (error) {
+    console.log(error);
+    setResult("Connection Error");
+  }
+};
   return (
     <View style={{ flex: 1 }}>
       <CameraView ref={cameraRef} style={{ flex: 1 }} />
