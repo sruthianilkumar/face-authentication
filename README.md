@@ -67,7 +67,7 @@ I built a **fully offline-first biometric authentication system** that:
 
 
 <p align="center">
-  <img src="assets/architecture.png" alt="Face Authentication Architecture" />
+  <img src="assets/Architecture.png" alt="Face Authentication Architecture" />
 </p>
 
 
