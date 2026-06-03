@@ -61,24 +61,29 @@ Face Matching Engine
 Authentication Result
 
 
-🛠 Technology Stack
+---
 
-📱 Frontend (Mobile App)
-React Native
-Expo
-TypeScript
+## 🛠 Technology Stack
 
-🧠 Backend
-Python
-Flask
-OpenCV
-MediaPipe
-NumPy
+### 📱 Frontend (Mobile App)
+- React Native
+- Expo
+- TypeScript
 
-💾 Storage
-Pickle-based local face encoding database (.pkl)
+### 🧠 Backend
+- Python
+- Flask
+- OpenCV
+- MediaPipe
+- NumPy
 
-📂 Project Structure
+### 💾 Storage
+- Pickle-based local face encoding database (.pkl)
+
+---
+
+## 📂 Project Structure
+
 face-authentication/
 │
 ├── backend/
@@ -103,8 +108,12 @@ face-authentication/
 │
 ├── requirements.txt
 └── LICENSE
-⚙️ Installation
-Backend Setup
+
+---
+
+## ⚙️ Installation
+### Backend Setup
+
 git clone https://github.com/sruthianilkumar/face-authentication.git
 cd face-authentication
 pip install -r requirements.txt
@@ -113,15 +122,16 @@ python backend/api.py
 Backend runs at:
 
 http://localhost:5000
-Mobile App Setup
-cd mobile_app
-npm install
-npx expo start
+
+### Mobile App Setup
 
 Scan QR using Expo Go to run on a mobile device.
 
-🔄 Usage Flow
-Start Flask backend
+---
+
+## 🔄 Usage Flow
+
+ Start Flask backend
 Launch mobile application
 Grant camera permissions
 Capture face image
@@ -129,19 +139,30 @@ Send image to backend API
 MediaPipe extracts facial features
 Features matched with stored encodings
 Authentication result returned
-⚠️ Limitations
+
+---
+
+## ⚠️ Limitations
+
 Prototype-level accuracy (depends on dataset size)
 Sensitive to lighting and camera quality
 Limited dataset for testing
 Requires real-device testing for production readiness
-🚀 Future Improvements
+
+---
+
+##🚀 Future Improvements
+
 FaceNet / ArcFace embeddings for higher accuracy
 Liveness detection (anti-spoofing)
 Encrypted local biometric storage
 Multi-user authentication system
 Improved mobile UI/UX
 Edge-device optimization
-📊 Impact
+
+---
+
+## 📊 Impact
 
 This project demonstrates a privacy-first biometric authentication system that avoids cloud dependency and enables secure identity verification in offline-first environments.
 
@@ -151,6 +172,12 @@ Rural authentication systems
 Secure offline access control
 Edge computing environments
 Low-connectivity deployments
-🏁 License
+
+---
+
+## 🏁 License
 
 This project is intended for educational and hackathon demonstration purposes.
+
+---
+
