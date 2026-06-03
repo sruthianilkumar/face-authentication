@@ -60,7 +60,6 @@ Face Matching Engine
           ▼
 Authentication Result
 
-
 ---
 
 ## 🛠 Technology Stack
@@ -84,6 +83,7 @@ Authentication Result
 
 ## 📂 Project Structure
 
+```text
 face-authentication/
 │
 ├── backend/
@@ -111,73 +111,90 @@ face-authentication/
 
 ---
 
-## ⚙️ Installation
-### Backend Setup
 
+## ⚙️ Installation
+
+### 🔧 Backend Setup
+
+```bash
 git clone https://github.com/sruthianilkumar/face-authentication.git
+
 cd face-authentication
+
 pip install -r requirements.txt
+
 python backend/api.py
 
-Backend runs at:
 
+
+### 🔧 Backend Setup Output
+
+- Backend will start successfully
+- Accessible at:
+
+```text
 http://localhost:5000
-
-### Mobile App Setup
-
-Scan QR using Expo Go to run on a mobile device.
 
 ---
 
+### 📱 Mobile App Setup
+
+```bash
+cd mobile_app
+npm install
+npx expo start
+
+Scan the QR code using the **Expo Go app** to launch the application on your mobile device.
+
+---
+
+
 ## 🔄 Usage Flow
 
- Start Flask backend
-Launch mobile application
-Grant camera permissions
-Capture face image
-Send image to backend API
-MediaPipe extracts facial features
-Features matched with stored encodings
-Authentication result returned
+- Start Flask backend  
+- Launch mobile application  
+- Grant camera permissions  
+- Capture face image  
+- Send image to backend API  
+- MediaPipe extracts facial features  
+- Features matched with stored encodings  
+- Authentication result returned  
 
 ---
 
 ## ⚠️ Limitations
 
-Prototype-level accuracy (depends on dataset size)
-Sensitive to lighting and camera quality
-Limited dataset for testing
-Requires real-device testing for production readiness
+- Prototype-level accuracy (depends on dataset size)  
+- Sensitive to lighting and camera quality  
+- Limited dataset for testing  
+- Requires real-device testing for production readiness  
 
 ---
 
-##🚀 Future Improvements
+## 🚀 Future Improvements
 
-FaceNet / ArcFace embeddings for higher accuracy
-Liveness detection (anti-spoofing)
-Encrypted local biometric storage
-Multi-user authentication system
-Improved mobile UI/UX
-Edge-device optimization
+- FaceNet / ArcFace embeddings  
+- Liveness detection (anti-spoofing)  
+- Encrypted local biometric storage  
+- Multi-user authentication system  
+- Improved mobile UI/UX  
+- Edge-device optimization  
 
 ---
 
 ## 📊 Impact
 
-This project demonstrates a privacy-first biometric authentication system that avoids cloud dependency and enables secure identity verification in offline-first environments.
+This project demonstrates a **privacy-first biometric authentication system** that avoids cloud dependency and enables secure identity verification in offline-first environments.
 
 It is suitable for:
 
-Rural authentication systems
-Secure offline access control
-Edge computing environments
-Low-connectivity deployments
+- Rural authentication systems  
+- Secure offline access control  
+- Edge computing environments  
+- Low-connectivity deployments  
 
 ---
 
 ## 🏁 License
 
 This project is intended for educational and hackathon demonstration purposes.
-
----
-
