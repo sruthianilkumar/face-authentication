@@ -282,3 +282,12 @@ This project is developed for **educational and hackathon demonstration purposes
 ✔ Privacy-preserving design  
 ✔ Real-world deployment potential  
 ✔ Lightweight and scalable  
+
+---
+
+## 👩‍💻 Author
+
+Sruthi A K  
+Built as part of a hackathon project focused on privacy-preserving AI authentication.
+
+---
