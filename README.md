@@ -168,6 +168,12 @@ Scan QR using **Expo Go**.
 
 ---
 
+## 📸 Screenshots
+
+Mobile app and system outputs are available in the `assets/` folder.
+
+---
+
 ## 🚀 Future Scope
 
 - FaceNet / ArcFace integration  
