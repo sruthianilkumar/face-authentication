@@ -1,36 +1,33 @@
 # Python
-
-**pycache**/
+__pycache__/
 *.pyc
 venv/
+.env
+*.pkl
 
-# React Native / Expo
-
+# React Native / Expo / Node
 node_modules/
 .expo/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Android
-
 android/.gradle/
 android/app/build/
+*.apk
+*.aab
 
 # iOS
-
 ios/build/
-
-# Environment
-
-.env
+ios/Pods/
+*.xcworkspace
 
 # VS Code
-
 .vscode/
 
 # OS files
-
 .DS_Store
 
 # Logs
-
 *.log
-
