@@ -85,7 +85,7 @@ Face Matching Engine
 Authentication Result
 ```
 
-
+---
 
 ## Face Recognition Pipeline (ML + Embeddings)
 
@@ -214,7 +214,7 @@ http://localhost:5000
 ### 📱 Mobile App
 
 ```bash
-cd mobile_app
+cd future_mobile_app
 npm install
 npx expo start
 ```
@@ -255,6 +255,7 @@ Mobile app and system outputs are available in the `assets/` folder.
 - Head movement verification
 - Smile-based challenge response
 - Prevents photo/video spoofing attacks
+
 ---
 
 ## 📊 Real-World Impact

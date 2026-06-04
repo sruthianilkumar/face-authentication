@@ -1,6 +1,6 @@
 # Future Mobile App
 
-React Native (Expo) mobile client for the Offline Face Authentication System.
+React Native (Expo) mobile client for the Face Authentication System.
 
 ## Features
 
