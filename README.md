@@ -161,7 +161,6 @@ face-authentication/
 │
 ├── backend/              # Flask API
 ├── data/                 # Face images dataset
-├── models/               # Encoded face embeddings
 ├── src/                  # Face processing scripts
 ├── future_mobile_app/    # React Native app
 ├── requirements.txt      # Python dependencies
