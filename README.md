@@ -163,7 +163,7 @@ face-authentication/
 ├── data/                 # Face images dataset
 ├── models/               # Encoded face embeddings
 ├── src/                  # Face processing scripts
-├── mobile_app/           # React Native app
+├── future_mobile_app/    # React Native app
 ├── requirements.txt      # Python dependencies
 └── LICENSE
 ```
